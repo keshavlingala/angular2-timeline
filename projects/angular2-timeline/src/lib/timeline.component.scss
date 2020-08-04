@@ -1,0 +1,273 @@
+timeline {
+  //padding-inline-start: 0;
+  display: block;
+  margin-top: 100px;
+  position: relative;
+  text-align: justify;
+  width: inherit;
+  //border: 1px solid black;
+
+  &:before {
+    //display: inline-block;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 3px;
+    background-color: #007bff7a;
+    left: 50%;
+    margin-left: -1.5px;
+  }
+
+
+  timeline-item:nth-child(odd) {
+    position: relative;
+    list-style: none;
+    width: 50%;
+    margin-top: -30px;
+    display: block;
+
+    > div:first-child {
+      width: 80%;
+      z-index: 3;
+      background-color: white;
+    }
+
+    .line {
+      height: 1px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      bottom: 50%;
+      margin-right: -5px;
+      background-color: gray;
+      z-index: -1;
+      right: 15px;
+    }
+
+    .dot-a {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      right: 20%;
+      margin-right: -10px;
+      margin-top: -5px;
+      background-color: #ff6090;
+      z-index: 2;
+      box-shadow: none;
+    }
+
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-right: -5px;
+      margin-top: -5px;
+      background-color: #ff6090;
+      z-index: 2;
+      box-shadow: 0 0 2px 5px #fff,
+      0 0 0 7px #808080,
+      0 0 0 12px #fff,
+      0 0 0 13px #ff6090;
+    }
+  }
+
+  timeline-item:nth-child(even) {
+    display: block;
+    position: relative;
+    list-style: none;
+    width: 50%;
+    margin-left: 50%;
+    margin-top: -50px;
+
+    > div:first-child {
+      width: 80%;
+      background-color: white;
+      z-index: 3;
+      margin-left: auto;
+    }
+
+    .line {
+      height: 1px;
+      position: absolute;
+      left: 0;
+      right: 5px;
+      top: 50%;
+      bottom: 50%;
+      background-color: gray;
+      z-index: -1;
+    }
+
+    .dot-a {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      margin-left: -10px;
+      margin-top: -5px;
+      background-color: #534bae;
+      z-index: 2;
+      box-shadow: none;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-left: -5px;
+      margin-top: -5px;
+      z-index: 2;
+      background-color: #534bae;
+      box-shadow: 0 0 2px 5px #fff,
+      0 0 0 7px #808080,
+      0 0 0 12px #fff,
+      0 0 0 13px #534bae;
+    }
+  }
+
+  timeline-item:first-child {
+    margin-top: 0;
+  }
+
+  timeline-item:nth-child(6n+1) {
+    .dot {
+      background-color: #ec407a;
+      box-shadow: 0 0 2px 5px #fff,
+      0 0 0 7px #808080,
+      0 0 0 12px #fff,
+      0 0 0 13px #ec407a;
+    }
+
+    .dot-a {
+      background-color: #ec407a;
+    }
+  }
+
+  timeline-item:nth-child(6n+2) {
+    .dot {
+      background-color: #ab47bc;
+      box-shadow: 0 0 2px 5px #fff,
+      0 0 0 7px #808080,
+      0 0 0 12px #fff,
+      0 0 0 13px #ab47bc;
+    }
+
+    .dot-a {
+      background-color: #ab47bc;
+    }
+  }
+
+  timeline-item:nth-child(6n+3) {
+    .dot {
+      background-color: #26c6da;
+      box-shadow: 0 0 2px 5px #fff,
+      0 0 0 7px #808080,
+      0 0 0 12px #fff,
+      0 0 0 13px #26c6da;
+    }
+
+    .dot-a {
+      background-color: #26c6da;
+    }
+  }
+
+  timeline-item:nth-child(6n+4) {
+    .dot {
+      background-color: #ffc107;
+      box-shadow: 0 0 2px 5px #fff,
+      0 0 0 7px #808080,
+      0 0 0 12px #fff,
+      0 0 0 13px #ffc107;
+    }
+
+    .dot-a {
+      background-color: #ffc107;
+    }
+  }
+
+  timeline-item:nth-child(6n+5) {
+    .dot {
+      background-color: #006064;
+      box-shadow: 0 0 2px 5px #fff,
+      0 0 0 7px #808080,
+      0 0 0 12px #fff,
+      0 0 0 13px #006064;
+    }
+
+    .dot-a {
+      background-color: #006064;
+    }
+  }
+
+  timeline-item:nth-child(6n) {
+    .dot {
+      background-color: #ff7043;
+      box-shadow: 0 0 2px 5px #fff,
+      0 0 0 7px #808080,
+      0 0 0 12px #fff,
+      0 0 0 13px #ff7043;
+    }
+
+    .dot-a {
+      background-color: #ff7043;
+    }
+  }
+
+}
+
+@media (max-width: 767px) {
+  timeline {
+    &:before {
+      left: 5%;
+    }
+
+    timeline-item:nth-child(n) {
+      margin-left: 0;
+      width: 100%;
+      margin-top: 50px;
+
+      > div:first-child {
+        margin-left: auto;
+      }
+
+      .line {
+        left: 5%;
+      }
+
+      .dot-a {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        margin-left: -10px;
+        margin-top: -5px;
+        z-index: 2;
+        box-shadow: none;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        margin-left: -5px;
+        margin-top: -5px;
+      }
+    }
+  }
+}

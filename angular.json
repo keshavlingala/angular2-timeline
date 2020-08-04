@@ -2,5 +2,167 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "angular2-timeline": {
+      "projectType": "library",
+      "root": "projects/angular2-timeline",
+      "sourceRoot": "projects/angular2-timeline/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular2-timeline/tsconfig.lib.json",
+            "project": "projects/angular2-timeline/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular2-timeline/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular2-timeline/src/test.ts",
+            "tsConfig": "projects/angular2-timeline/tsconfig.spec.json",
+            "karmaConfig": "projects/angular2-timeline/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular2-timeline/tsconfig.lib.json",
+              "projects/angular2-timeline/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "timelineTest": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/timelineTest",
+      "sourceRoot": "projects/timelineTest/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/timelineTest",
+            "index": "projects/timelineTest/src/index.html",
+            "main": "projects/timelineTest/src/main.ts",
+            "polyfills": "projects/timelineTest/src/polyfills.ts",
+            "tsConfig": "projects/timelineTest/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/timelineTest/src/favicon.ico",
+              "projects/timelineTest/src/assets"
+            ],
+            "styles": [
+              "projects/timelineTest/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/timelineTest/src/environments/environment.ts",
+                  "with": "projects/timelineTest/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "timelineTest:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "timelineTest:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "timelineTest:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/timelineTest/src/test.ts",
+            "polyfills": "projects/timelineTest/src/polyfills.ts",
+            "tsConfig": "projects/timelineTest/tsconfig.spec.json",
+            "karmaConfig": "projects/timelineTest/karma.conf.js",
+            "assets": [
+              "projects/timelineTest/src/favicon.ico",
+              "projects/timelineTest/src/assets"
+            ],
+            "styles": [
+              "projects/timelineTest/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/timelineTest/tsconfig.app.json",
+              "projects/timelineTest/tsconfig.spec.json",
+              "projects/timelineTest/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/timelineTest/e2e/protractor.conf.js",
+            "devServerTarget": "timelineTest:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "timelineTest:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "angular2-timeline"
 }

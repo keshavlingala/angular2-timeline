@@ -1,0 +1,16 @@
+{
+  "name": "angular2-timeline",
+  "version": "0.0.1",
+  "author": {
+    "email": "keshavlingala@gmail.com",
+    "name": "Keshav Lingala",
+    "url": "https://keshavlingala.github.io"
+  },
+  "peerDependencies": {
+    "@angular/common": "^10.0.6",
+    "@angular/core": "^10.0.6"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

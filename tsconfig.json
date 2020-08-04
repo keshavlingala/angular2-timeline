@@ -6,5 +6,18 @@
 */
 {
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./projects/angular2-timeline/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/angular2-timeline/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/timelineTest/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/timelineTest/tsconfig.spec.json"
+    }
+]
 }
