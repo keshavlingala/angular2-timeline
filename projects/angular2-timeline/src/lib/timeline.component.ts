@@ -3,7 +3,9 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 @Component({
   selector: 'timeline',
   template: `
-    <!--    Author: Keshav Lingala -->
+<!--     Author: Keshav Lingala-->
+<!--     Github: https:github.com/keshavlingala-->
+<!--     ( https://keshavlingala.github.io )-->
     <ng-content></ng-content>
   `,
   styleUrls: ['./timeline.component.scss'],

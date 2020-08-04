@@ -1,11 +1,18 @@
 {
   "name": "angular2-timeline",
   "version": "0.0.1",
+  "description": "Angular Timeline Library Quick add and use angular component in you application useful for many data view and time based views",
   "author": {
     "email": "keshavlingala@gmail.com",
     "name": "Keshav Lingala",
     "url": "https://keshavlingala.github.io"
   },
+  "keywords": [
+    "angular2",
+    "angular2-timeline",
+    "angular dataview",
+    "timeline"
+  ],
   "peerDependencies": {
     "@angular/common": "^10.0.6",
     "@angular/core": "^10.0.6"
