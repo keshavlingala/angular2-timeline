@@ -1,27 +1,91 @@
-# Timeline
+#angular2-timeline
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+## Usage & Demo
+Sample Demo
+### [Demo](http://keshavlingala.github.io/angular2-timeline/)  
 
-## Development server
+##Installation
+Install using npm  
+```bash
+> npm i angular2-timeline
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Add Timeline Module
+```typescript
+import {TimelineModule} from "angular2-timeline"; 
 
-## Code scaffolding
+@NgModule({
+    ...
+  imports: [
+    TimelineModule,
+    ...
+  ],
+```
+## Exposed Components
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- TimelineComponent
+- TimelineItemCompoenent
 
-## Build
+##How to use
+```html
+<timeline>
+  <timeline-item>
+ <!-- your content here -->
+  </timeline-item>
+</timeline>
+```
+Create a simple timeline
+```typescript
+import {Component} from '@angular/core';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+@Component({
+  selector: 'app-root',
+  template: `
+    <button (click)="more.push(0)">Add More</button>
+    <timeline>
+      <timeline-item>
+        <div style="background-color: azure;padding: 10px;box-shadow: 3px 3px 15px 3px #6565656b;">
+          <h1>Title</h1>
+          <h4>Subtitle</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's
+            standard dummy text ever since the 1500s.</p>
+        </div>
+      </timeline-item>
+      <timeline-item>
+        <div style="background-color: azure;padding: 10px;box-shadow: 3px 3px 15px 3px #6565656b;">
+          <h1>Title</h1>
+          <h4>Subtitle</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's
+            standard dummy text ever since the 1500s.</p>
+        </div>
+      </timeline-item>
+      <timeline-item *ngFor="let i of more">
+        <div style="background-color: azure;padding: 10px;box-shadow: 3px 3px 15px 3px #6565656b;">
+          <h1>Title</h1>
+          <h4>Subtitle</h4>
+        </div>
+      </timeline-item>
+    </timeline>
+  `,
+})
+export class AppComponent {
+  more = [];
+}
+```
+#Features
+- Mobile Responsive
+- Customizable colors for each timeline item
 
-## Running unit tests
+## Author
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Keshav Lingala**
+ 
++ [github/keshavlingala](https://github.com/keshavlingala)
++ [twitter/keshavlingala](http://twitter.com/keshavlingala) 
 
-## Running end-to-end tests
+***
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

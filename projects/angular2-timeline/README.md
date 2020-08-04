@@ -1,5 +1,9 @@
 #angular2-timeline
 
+## Usage & Demo
+Sample Demo
+### [Demo](http://keshavlingala.github.io/angular2-timeline/)  
+
 ##Installation
 Install using npm  
 ```bash
