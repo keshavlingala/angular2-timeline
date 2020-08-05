@@ -1,4 +1,4 @@
-#angular2-timeline
+# angular2-timeline
 
 ## Usage & Demo
 Sample Demo
