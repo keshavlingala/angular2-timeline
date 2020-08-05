@@ -68,9 +68,13 @@
               "projects/timelineTest/src/assets"
             ],
             "styles": [
-              "projects/timelineTest/src/styles.scss"
+              "projects/timelineTest/src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/aos/dist/aos.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/aos/dist/aos.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -163,6 +167,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "angular2-timeline"
 }
