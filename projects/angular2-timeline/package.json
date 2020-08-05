@@ -7,6 +7,9 @@
     "name": "Keshav Lingala",
     "url": "https://keshavlingala.github.io"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "keywords": [
     "angular2",
     "angular2-timeline",
